@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Player">
+      <UniqueIdentifier>{50e14ec0-b000-40a0-b934-d53bb7e15c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{8588c65f-eca0-4dd7-a513-5cf0ac50aec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Items">
+      <UniqueIdentifier>{bbbc0313-b0e2-4259-a4c2-572d826b4b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Location">
+      <UniqueIdentifier>{87020c22-5970-4ffd-905b-9d4b6ab20037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameInterface">
+      <UniqueIdentifier>{924585d7-6747-47e9-8e1d-cead1316c5e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Crossbow.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Consumable.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Bolt.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Location</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInterface.h">
+      <Filter>GameInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Location</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockedWay.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Items</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Crossbow.cpp">
+      <Filter>Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInterface.cpp">
+      <Filter>GameInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBasedGame.cpp" />
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Location</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Location</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+</Project>
