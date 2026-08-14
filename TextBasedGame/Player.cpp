@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Platform.h"
 #include"Sword.h"
 #include"Consumable.h"
 #include"BlockedWay.h"
@@ -76,7 +77,7 @@ void Player::movement(std::string& direction)
 	if (next)
 	{
 		currentRoom = next;
-		system("cls");
+		clearScreen();
 		currentRoom->describe();
 		spendFuel();
 	}
