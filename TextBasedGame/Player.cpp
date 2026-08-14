@@ -94,14 +94,28 @@ void Player::use(std::string& name)
 		ItemType type = it->second->getType();
 		if (type == ItemType::bolt)
 		{
+			Crossbow* crossbow = nullptr; //the crossbow can be equipped instead
+
 			auto helper = inventory.find("crossbow");
 			if (helper != inventory.end())
 			{
-				dynamic_cast<Crossbow&>(*(helper->second)).
-					addBolts(dynamic_cast<Bolt&>(*(it->second)).getQuantity());
+				crossbow = dynamic_cast<Crossbow*>(helper->second.get());
+			}
+			else if (currentWeapon && currentWeapon->getType() == ItemType::crossbow)
+			{
+				crossbow = dynamic_cast<Crossbow*>(currentWeapon.get());
+			}
+
+			if (crossbow)
+			{
+				crossbow->addBolts(dynamic_cast<Bolt&>(*(it->second)).getQuantity());
 
 				std::cout << "You used 'Bolts'.\n\n";
 				inventory.erase(it);
+			}
+			else
+			{
+				std::cout << "You don't have a Crossbow to load them into.\n\n";
 			}
 		}
 		else if (type == ItemType::consumable)
