@@ -1,6 +1,7 @@
 #include<limits>
 
 #include "GameInterface.h"
+#include "Platform.h"
 #include "Item.h"
 #include"Enemy.h"
 #include"BlockedWay.h"
@@ -37,7 +38,7 @@ void GameInterface::play()
         if (!player.isDead())
         {
             std::cout << ">> Command: ";
-            std::getline(std::cin, input);
+            readLine(input);
             processAction(input, ss);
 
             if (escaped)
@@ -242,8 +243,9 @@ void GameInterface::titleScreen() const
         << "(this describes current room)\n\nAlso at any time you can write \"help\""
         << " in the command line to show all existing commands.\n\nPress Enter to continue.";
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    system("cls");
+    std::string ignored;
+    readLine(ignored);
+    clearScreen();
     player.currentRoom->describe();
 }
 
@@ -251,14 +253,14 @@ bool GameInterface::gameOver()
 {
     std::cout << "Would you like to play again? (yes/no): ";
     std::string input;
-    std::getline(std::cin, input);
+    readLine(input);
     standardize(input);
 
     while (true)
     {
         if (input == "yes")
         {
-            system("cls");
+            clearScreen();
             reset();
             return false;
         }
@@ -270,7 +272,7 @@ bool GameInterface::gameOver()
         else
         {
             std::cout << "Read thoroughly! It's a yes or no: ";
-            std::getline(std::cin, input);
+            readLine(input);
             standardize(input);
         }
     }

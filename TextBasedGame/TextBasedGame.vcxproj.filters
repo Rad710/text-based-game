@@ -81,6 +81,5 @@
     <ClCompile Include="Map.cpp">
       <Filter>Location</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp" />
   </ItemGroup>
 </Project>

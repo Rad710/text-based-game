@@ -13,8 +13,10 @@ enum class ItemType
 class Item
 {
 public:
-	Item(std::string& name, ItemType type, std::string& position) : 
+	Item(std::string& name, ItemType type, std::string& position) :
 		name(name), type(type), position(position) {}
+
+	virtual ~Item() = default; //Items are always deleted through Item*/Weapon*
 
 	virtual void printName() const = 0;
 
